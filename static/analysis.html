@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/analysis.css') }}">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Onward Technologies Logo">
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><a href="#">Health AI</a></li>
+                <li><a href="#"><img src="{{ url_for('static', filename='user-profile-icon.svg') }}" alt="Profile Icon" class="profile-icon"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="side-panel">
+            <button>
+                <img src="{{ url_for('static', filename='newfile.png') }}" alt="New Image">
+                <span>New Image</span>
+            </button>
+            <button>
+                <img src="{{ url_for('static', filename='history.png') }}" alt="History">
+                <span>History</span>
+            </button>
+            <button>
+                <img src="{{ url_for('static', filename='comments.png') }}" alt="Comments">
+                <span>Comments</span>
+            </button>
+            <button>
+                <img src="{{ url_for('static', filename='legend.svg') }}" alt="Legend">
+                <span>Legend</span>
+            </button>
+            <button>
+                <img src="{{ url_for('static', filename='settings.png') }}" alt="Settings">
+                <span>Settings</span>
+            </button>
+            <button>
+                <img src="{{ url_for('static', filename='patients.png') }}" alt="Patients">
+                <span>Patients</span>
+            </button>
+        </div>
+        <div class="analysis-container">
+            <h1>Analysis Results</h1>
+            <div class="results-box">
+                <div class="image-box" id="retina-image-box">
+                    <h2>Retina Image</h2>
+                    <img id="retina-image" src="{{ url_for('static', filename='uploads/' + filename) }}" alt="Uploaded Image">
+                </div>
+                <div class="image-box" id="mask-container" style="display:none;">
+                    <h2>Mask Overlay</h2>
+                    <img id="mask-image" src="{{ url_for('static', filename='masks/' + mask_filename) }}" alt="Mask Overlay">
+                </div>
+                <div class="buttons-container">
+                    <button id="show-mask-btn">Show Mask</button>
+                </div>
+                <div class="prediction-text">
+                    <p>Diabetic Retinopathy Severity: {{ prediction_dr }}</p>
+                    <p>Macular Edema Severity: {{ prediction_me }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('show-mask-btn').addEventListener('click', function() {
+            const maskContainer = document.getElementById('mask-container');
+            const retinaImageBox = document.getElementById('retina-image-box');
+            if (maskContainer.style.display === 'none') {
+                maskContainer.style.display = 'block';
+                retinaImageBox.style.flex = '1';
+                maskContainer.style.flex = '1';
+                this.textContent = 'Hide Mask';
+            } else {
+                maskContainer.style.display = 'none';
+                retinaImageBox.style.flex = 'unset';
+                this.textContent = 'Show Mask';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Results</title>
+    <!-- Link to the external CSS file for styling -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/analysis.css') }}">
+</head>
+<body>
+    <!-- Header section with logo and navigation -->
+    <header class="header">
+        <!-- <div class="logo"> -->
+            <!-- Logo image for the company -->
+            <!-- <img src="{{ url_for('static', filename='logo.png') }}" alt="Onward Technologies Logo"> -->
+        <!-- </div> -->
+        <nav class="nav">
+            <ul>
+                <!-- Placeholder link for Health AI -->
+                <li><a href="#">Health AI</a></li>
+                <!-- User profile icon -->
+                <li><a href="#"><img src="{{ url_for('static', filename='user-profile-icon.svg') }}" alt="Profile Icon" class="profile-icon"></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main container for the content -->
+    <div class="container">
+        <!-- Side panel with buttons for various options -->
+        <div class="side-panel">
+            <button id="new-image-btn">
+                <!-- Button for uploading a new image -->
+                <img src="{{ url_for('static', filename='newfile.png') }}" alt="New Image">
+                <span>New Image</span>
+            </button>
+            <button id="history-btn">
+                <!-- Button for viewing history -->
+                <img src="{{ url_for('static', filename='history.png') }}" alt="History">
+                <span>History</span>
+            </button>
+            <button id="comments-btn">
+                <!-- Button for accessing comments -->
+                <img src="{{ url_for('static', filename='comments.png') }}" alt="Comments">
+                <span>Comments</span>
+            </button>
+            <button id="legend-btn">
+                <!-- Button to toggle the legend box -->
+                <img src="{{ url_for('static', filename='legend.svg') }}" alt="Legend">
+                <span>Legend</span>
+            </button>
+            <button id="settings-btn">
+                <!-- Button for settings -->
+                <img src="{{ url_for('static', filename='settings.png') }}" alt="Settings">
+                <span>Settings</span>
+            </button>
+            <button id="patients-btn">
+                <!-- Button for viewing patient details -->
+                <img src="{{ url_for('static', filename='patients.png') }}" alt="Patients">
+                <span>Patients</span>
+            </button>
+        </div>
+
+        <!-- Main content area for analysis results -->
+        <div class="main-content">
+            <div class="analysis-container">
+                <h1>Analysis Results</h1>
+                <!-- Container for displaying retina image and mask overlay -->
+                <div class="results-box">
+                    <div class="image-box" id="retina-image-box">
+                        <h2>Retina Image</h2>
+                        <!-- Display the uploaded retina image -->
+                        <img id="retina-image" src="{{ url_for('static', filename='uploads/' + filename) }}" alt="Uploaded Image">
+                    </div>
+                    <div class="image-box" id="mask-container" style="display:none;">
+                        <h2>Mask Overlay</h2>
+                        <!-- Display the mask overlay image, hidden by default -->
+                        <img id="mask-image" src="{{ url_for('static', filename='masks/' + mask_filename) }}" alt="Mask Overlay">
+                    </div>
+                    <!-- Button to toggle the display of the mask overlay -->
+                    <div class="buttons-container">
+                        <button id="show-mask-btn">Show Mask</button>
+                    </div>
+                    <!-- Display the prediction results for diabetic retinopathy and macular edema -->
+                    <div class="prediction-text">
+                        <p>Diabetic Retinopathy Severity: {{ prediction_dr }}</p>
+                        <p>Macular Edema Severity: {{ prediction_me }}</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Legend box for explaining the colors in the mask overlay -->
+            <div id="legend-box" class="legend-box">
+                <h3>Legend</h3>
+                <!-- Legend item for Hard Exudates -->
+                <div class="legend-item">
+                    <div class="color-box" style="background-color: green;"></div>
+                    <span>Hard Exudates</span>
+                </div>
+                <!-- Legend item for Soft Exudates -->
+                <div class="legend-item">
+                    <div class="color-box" style="background-color: red;"></div>
+                    <span>Soft Exudates</span>
+                </div>
+                <!-- Legend item for Optic Disc -->
+                <div class="legend-item">
+                    <div class="color-box" style="background-color: blue;"></div>
+                    <span>Optic Disc</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript to handle UI interactions -->
+    <script>
+        // Toggle the display of the mask overlay when the button is clicked
+        document.getElementById('show-mask-btn').addEventListener('click', function() {
+            const maskContainer = document.getElementById('mask-container');
+            const retinaImageBox = document.getElementById('retina-image-box');
+            if (maskContainer.style.display === 'none') {
+                maskContainer.style.display = 'block';
+                retinaImageBox.style.flex = '1';
+                maskContainer.style.flex = '1';
+                this.textContent = 'Hide Mask';
+            } else {
+                maskContainer.style.display = 'none';
+                retinaImageBox.style.flex = 'unset';
+                this.textContent = 'Show Mask';
+            }
+        });
+
+        // Toggle the display of the legend box when the button is clicked
+        document.getElementById('legend-btn').addEventListener('click', function() {
+            const legendBox = document.getElementById('legend-box');
+            if (legendBox.style.display === 'none' || legendBox.style.display === '') {
+                legendBox.style.display = 'block';
+            } else {
+                legendBox.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

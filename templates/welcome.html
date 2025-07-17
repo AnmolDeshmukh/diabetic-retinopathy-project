@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <!-- Link to the external CSS file for styling -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/welcome.css') }}">
+</head>
+<body>
+    <!-- Header section with logo and navigation links -->
+    <header class="header">
+        <div class="logo">
+            <!-- Logo image for the company -->
+            <img src="{{ url_for('static', filename='logoblue.png') }}" alt="Onward Technologies Logo">
+        </div>
+        <nav class="nav">
+            <ul>
+                <!-- Navigation links for Services, FAQs, Login, and Sign Up -->
+                <li><a href="#">Services</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+                <li><a href="{{ url_for('login') }}">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Banner section with background image and text -->
+    <section class="banner">
+        <div class="banner-content">
+            <!-- Background image in the banner -->
+            <img src="{{ url_for('static', filename='bg_woman.png') }}" alt="Background Image" class="banner-image">
+            <div class="text-box">
+                <!-- Main heading and subheading text -->
+                <h1>Enhance your practice with AI technology</h1>
+                <p>Innovative Healthcare</p>
+                <!-- Button to get started, linking to the login page -->
+                <a href="{{ url_for('login') }}" class="btn">Get Started</a> <!-- Updated href to login -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics section displaying key figures -->
+    <section class="statistics">
+        <div class="stat">
+            <!-- Stat 1: Accuracy improvement -->
+            <h2>20%</h2>
+            <p>Accuracy Improved By</p>
+        </div>
+        <div class="stat">
+            <!-- Stat 2: Lab values and clinical history -->
+            <h2>2000+</h2>
+            <p>Lab Values & Clinical History</p>
+        </div>
+        <div class="stat">
+            <!-- Stat 3: Images analyzed -->
+            <h2>3,000,000+</h2>
+            <p>Images Analyzed</p>
+        </div>
+    </section>
+
+    <main>
+        <!-- Section highlighting therapeutic areas covered -->
+        <section class="therapeutic-areas">
+            <h2>Therapeutic Areas Covered</h2>
+            <!-- Carousel to display therapeutic areas (placeholder items) -->
+            <div class="carousel">
+                <div class="carousel-item"></div>
+                <div class="carousel-item"></div>
+                <div class="carousel-item"></div>
+                <div class="carousel-item"></div>
+                <div class="carousel-item"></div>
+                <div class="carousel-item"></div>
+                <div class="carousel-item"></div>
+                <div class="carousel-item"></div>
+                <div class="carousel-item"></div>
+                <div class="carousel-item"></div>
+                <div class="carousel-item"></div>
+                <div class="carousel-item"></div>
+            </div>
+        </section>
+        
+        <!-- Section prompting users to analyze images -->
+        <section class="analyze-images">
+            <h2>Analyze Images</h2>
+            <!-- Button to get started, linking to the login page -->
+            <a href="{{ url_for('login_form') }}" class="btn">Get Started</a> <!-- Updated href to login -->
+        </section>
+    </main>
+</body>
+</html>

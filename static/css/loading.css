@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    height: 100vh; /* Full viewport height */
+    background: linear-gradient(135deg, #fafafa, #e1f2fa); /* Light gradient background */
+    color: rgb(0, 0, 0); /* Black text color */
+}
+
+/* Container for the loading spinner and text */
+.loading-container {
+    text-align: center; /* Center align text and content */
+}
+
+/* Styling for the loading spinner */
+.spinner {
+    width: 50px; /* Spinner width */
+    height: 50px; /* Spinner height */
+    border: 5px solid rgba(0, 0, 0, 0.3); /* Light grey border */
+    border-top-color: #000000; /* Black top border for the spinner effect */
+    border-radius: 50%; /* Make the spinner a circle */
+    animation: spin 1s linear infinite; /* Continuous rotation animation */
+    margin-bottom: 20px; /* Space below the spinner */
+}
+
+/* Keyframes for the spinning animation */
+@keyframes spin {
+    to { transform: rotate(360deg); } /* Rotate 360 degrees to create the spinning effect */
+}

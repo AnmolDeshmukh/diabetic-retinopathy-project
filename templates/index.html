@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- Link to the external CSS file for styling -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+        /* Inline style to set the background image for the body */
+        body {
+            background: url('{{ url_for('static', filename='bg.jpeg') }}') no-repeat center center fixed;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="login-box">
+            <!-- Tabs for switching between login and sign-up forms -->
+            <div class="tabs">
+                <button class="tab active" onclick="showLogin()">LOG IN</button>
+                <button class="tab" onclick="showSignup()">SIGN UP</button>
+            </div>
+            <!-- Company logo -->
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Onward Technologies Logo" class="logo">
+
+            <!-- Login form -->
+            <form id="loginForm" method="post" action="{{ url_for('login') }}">
+                <div class="input-group">
+                    <label for="username">User Name</label>
+                    <input type="text" id="username" name="username" placeholder="User Name/Email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                </div>
+                <div class="options">
+                    <label>
+                        <input type="checkbox" name="remember"> Remember Me
+                    </label>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+                <button type="submit" class="sign-in-button">LOG IN</button>
+                <div id="error-message"></div>
+            </form>
+
+            <!-- Sign-up form, hidden by default -->
+            <form id="signupForm" style="display: none;">
+                <div class="input-group">
+                    <label for="signup-username">User Name</label>
+                    <input type="text" id="signup-username" name="signup-username" placeholder="User Name/Email" required>
+                </div>
+                <div class="input-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" name="signup-password" placeholder="Password" required>
+                </div>
+                <div class="input-group">
+                    <label for="signup-confirm-password">Confirm Password</label>
+                    <input type="password" id="signup-confirm-password" name="signup-confirm-password" placeholder="Confirm Password" required>
+                </div>
+                <button type="submit" class="sign-in-button">SIGN UP</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Function to show the login form and hide the sign-up form
+        function showLogin() {
+            document.getElementById('loginForm').style.display = 'block';
+            document.getElementById('signupForm').style.display = 'none';
+            document.querySelector('.tab.active').classList.remove('active');
+            document.querySelectorAll('.tab')[0].classList.add('active');
+        }
+
+        // Function to show the sign-up form and hide the login form
+        function showSignup() {
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('signupForm').style.display = 'block';
+            document.querySelector('.tab.active').classList.remove('active');
+            document.querySelectorAll('.tab')[1].classList.add('active');
+        }
+    </script>
+</body>
+</html>

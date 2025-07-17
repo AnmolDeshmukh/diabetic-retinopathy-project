@@ -1,0 +1,252 @@
+body {
+    /* Remove default margin, set font and layout with flexbox */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    height: 100vh; /* Full viewport height */
+    background: linear-gradient(135deg, #0033cc, #00b3ff); /* Gradient background */
+}
+
+.container {
+    /* Flexbox container to center content */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    width: 100%; /* Full width */
+}
+
+.login-box {
+    /* Styling for the login box with background blur */
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Blur effect for background */
+    padding: 20px;
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    text-align: center;
+    width: 500px; /* Fixed width */
+}
+
+.tabs {
+    /* Flexbox for tabs layout */
+    display: flex;
+    justify-content: space-between; /* Space between tabs */
+    margin-bottom: 20px;
+}
+
+.tab {
+    /* Styling for each tab */
+    background: transparent; /* Transparent background */
+    border: none;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    cursor: pointer;
+    flex: 1; /* Allow tabs to take equal space */
+    transition: background 0.3s; /* Smooth background transition */
+}
+
+.tab.active {
+    /* Styling for the active tab */
+    background: #00b3ff; /* Highlighted background */
+    border-radius: 15px 15px 0 0; /* Rounded top corners */
+}
+
+.logo {
+    /* Styling for the logo */
+    width: 150px;
+    margin-bottom: 10px; /* Space below logo */
+}
+
+.contact-logo {
+    /* Styling for smaller contact logos */
+    width: 50px;
+    margin: 0 auto 20px; /* Center with margin below */
+}
+
+.input-group {
+    /* Container for form input groups */
+    margin-bottom: 15px;
+    text-align: left; /* Align text to the left */
+}
+
+.input-group label {
+    /* Styling for form labels */
+    display: block;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    /* Styling for form inputs */
+    width: 100%; /* Full width */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px; /* Rounded corners */
+    box-sizing: border-box; /* Include padding and border in width */
+}
+
+.options {
+    /* Flexbox for options layout */
+    display: flex;
+    justify-content: space-between; /* Space between options */
+    align-items: center; /* Center items vertically */
+    margin-bottom: 15px;
+}
+
+.options label {
+    /* Styling for checkbox label */
+    color: white;
+}
+
+.forgot-password {
+    /* Styling for "Forgot Password" link */
+    color: white;
+    font-size: 12px;
+    text-decoration: none; /* Remove underline */
+}
+
+.sign-in-button {
+    /* Styling for sign-in button */
+    width: 100%; /* Full width */
+    padding: 10px;
+    background: #00b3ff; /* Blue background */
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer;
+    transition: background 0.3s; /* Smooth background transition */
+}
+
+.sign-in-button:hover {
+    /* Change background on hover */
+    background: #008cba; /* Darker blue on hover */
+}
+
+#error-message {
+    /* Styling for error message */
+    color: red;
+    margin-top: 10px; /* Space above error message */
+}
+
+.upload-container h1 {
+    /* Styling for heading inside upload container */
+    color: white;
+    margin-bottom: 20px;
+}
+
+.upload-container input[type="file"] {
+    /* Hide the file input element */
+    display: none;
+}
+
+.choose-file-label {
+    /* Styling for the file input label as a button */
+    display: inline-block;
+    padding: 10px 20px;
+    background: #00b3ff; /* Blue background */
+    color: white;
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+#image-preview {
+    /* Container for image preview with dashed border */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    margin-bottom: 20px;
+    border: 1px dashed #ccc; /* Dashed border */
+    padding: 10px;
+    width: 100%; /* Full width */
+    height: 200px; /* Fixed height */
+    box-sizing: border-box; /* Include padding and border in width/height */
+}
+
+#image-preview img {
+    /* Styling for the previewed image */
+    max-width: 100%; /* Scale image to fit width */
+    max-height: 100%; /* Scale image to fit height */
+    display: block;
+    margin: auto; /* Center image */
+}
+
+.upload-button {
+    /* Styling for upload button */
+    padding: 10px 20px;
+    background: #00b3ff; /* Blue background */
+    border: none;
+    color: white;
+    font-size: 16px; /* Larger text */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.upload-button:hover {
+    /* Change background color on hover for upload button */
+    background: #008cba; /* Darker blue on hover */
+}
+
+.analysis-container h1 {
+    /* Styling for heading in analysis container */
+    color: white;
+    margin-bottom: 20px;
+}
+
+.analysis-container .prediction {
+    /* Styling for prediction text in analysis container */
+    color: white;
+    margin-bottom: 20px;
+}
+
+.analysis-container .image-preview {
+    /* Styling for image preview in analysis container */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    margin-bottom: 20px;
+    border: 1px dashed #ccc; /* Dashed border */
+    padding: 10px;
+    width: 100%; /* Full width */
+    height: 200px; /* Fixed height */
+    box-sizing: border-box; /* Include padding and border in width/height */
+}
+
+.analysis-container .image-preview img {
+    /* Styling for the previewed image in analysis container */
+    max-width: 100%; /* Scale image to fit width */
+    max-height: 100%; /* Scale image to fit height */
+    display: block;
+    margin: auto; /* Center image */
+}
+
+.image-box {
+    /* Styling for image container box */
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+}
+
+.image-box img {
+    /* Styling for images inside image box */
+    max-width: 100%; /* Scale image to fit width */
+    max-height: 100%; /* Scale image to fit height */
+    display: block;
+    margin-top: 10px;
+}
+
+.image-title {
+    /* Styling for image title text */
+    color: white;
+    margin-bottom: 10px;
+}
+
+.prediction-text {
+    /* Styling for prediction text */
+    margin-top: 20px;
+    color: white;
+}

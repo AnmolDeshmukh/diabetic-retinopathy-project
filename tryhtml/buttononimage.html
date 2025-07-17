@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image with Centered Button</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            position: relative;
+            text-align: center;
+            width: 70%; /* Reduce the image width */
+            max-width: 900px; /* Set a maximum width for the image */
+        }
+
+        .image {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+        }
+
+        .button-container {
+            position: absolute;
+            top: 75%; /* Adjust this value to move the button under the embedded text */
+            left: 16%; /* Adjust this value to align the button with the embedded text */
+            transform: translate(-50%, -50%);
+        }
+
+        .button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <img src="/Users/anmoldeshmukh/Onward Internship/healthcare/geminireportread/TIMELINE/retina image project/data/data_new_retina/final/webapp3/tryhtml/Group 57.png" alt="Innovative Healthcare" class="image">
+    <div class="button-container">
+        <button class="button">Get Started</button>
+    </div>
+</div>
+
+</body>
+</html>

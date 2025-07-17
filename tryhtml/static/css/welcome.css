@@ -1,0 +1,192 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header .logo img {
+    height: 50px;
+}
+
+.header .nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.header .nav ul li {
+    display: inline;
+}
+
+.header .nav ul li a {
+    text-decoration: none;
+    color: white; /* Updated text color */
+    font-weight: bold;
+    background: #000080;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+.banner {
+    text-align: center;
+    color: white;
+    height: auto;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.banner-content {
+    position: relative;
+    width: 90%; /* Adjusted to match the statistics section width */
+    max-width: 1400px;
+    margin: 0 auto;
+    border-radius: 32px;
+    overflow: hidden;
+}
+
+.banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 32px;
+}
+
+.text-box {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    width: 100%;
+    max-width: 517px;
+    background: rgba(9, 9, 97, 0.66);
+    padding: 20px;
+    border-radius: 32px;
+    text-align: center; /* Center the button */
+}
+
+.text-box h1 {
+    font-family: 'Work Sans', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 55px;
+    line-height: 65px;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.text-box p {
+    font-family: 'Work Sans', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 33px;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+    margin: 20px 0;
+}
+
+.text-box .btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 24px;
+    background-color: #FFFFFF;
+    color: #090961;
+    text-decoration: none;
+    border-radius: 100px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 0.1px;
+    width: 156px;
+    height: 41px;
+    margin: 0 auto; /* Center the button */
+}
+
+.statistics {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 20px;
+    background-image: url('{{ url_for('static', filename='Group 58.png') }}'); /* Set the new image as the background */
+    background-size: cover; /* Ensure the image covers the entire section */
+    background-position: center;
+    color: white;
+    border-radius: 32px;
+    width: 90%;
+    margin: 20px auto;
+}
+
+.statistics .stat {
+    text-align: center;
+}
+
+.statistics .stat h2 {
+    font-size: 36px;
+    margin: 0;
+}
+
+.statistics .stat p {
+    margin: 10px 0 0;
+}
+
+.therapeutic-areas {
+    padding: 50px 20px;
+    text-align: center;
+    width: 90%;
+    margin: 20px auto;
+}
+
+.therapeutic-areas h2 {
+    margin-bottom: 20px;
+}
+
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px;
+}
+
+.carousel-item {
+    flex: 0 0 auto;
+    width: 150px;
+    height: 150px;
+    background-color: #6666a3;
+    border-radius: 20px;
+}
+
+.analyze-images {
+    background-color: #0033cc;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    border-radius: 32px;
+    width: 90%;
+    margin: 20px auto;
+}
+
+.analyze-images h2 {
+    margin-bottom: 20px;
+}
+
+.analyze-images .btn {
+    padding: 10px 20px;
+    background-color: white;
+    color: #0033cc;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+}

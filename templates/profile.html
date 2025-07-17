@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <!-- Link to the external CSS file for styling -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+</head>
+<body>
+    <!-- Header section with logo -->
+    <header class="header">
+        <div class="logo">
+            <!-- Company logo -->
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Onward Technologies Logo">
+        </div>
+    </header>
+
+    <!-- Main container for profile content -->
+    <div class="container">
+        <!-- Profile header section -->
+        <div class="profile-header">
+            <!-- Profile information -->
+            <div class="profile-info">
+                <!-- Profile picture of the doctor -->
+                <img src="{{ url_for('static', filename='docimage.webp') }}" alt="Doctor Image" class="profile-pic">
+                <div class="profile-details">
+                    <!-- Doctor's name and specialization -->
+                    <h2>David Anderson</h2>
+                    <p>(Ophthalmology)</p>
+                </div>
+            </div>
+
+            <!-- Statistics section -->
+            <div class="stats">
+                <div class="stat-box">
+                    <!-- Total patients count -->
+                    <p>Total Patients</p>
+                    <h3>135</h3>
+                </div>
+                <div class="stat-box">
+                    <!-- Total images analyzed count -->
+                    <p>Images Analyzed</p>
+                    <h3>1,101,556</h3>
+                </div>
+                <!-- Button to upload a new case -->
+                <button class="upload-button" onclick="window.location.href='{{ url_for('upload') }}'">New Case</button>
+            </div>
+        </div>
+
+        <!-- Patients section -->
+        <div class="patients-section">
+            <h3>All Patients</h3>
+            <p class="date">23 August, 2024</p>
+            <!-- Table displaying patient information -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>Patient</th>
+                        <th>Date</th>
+                        <th>Age</th>
+                        <th>Gender</th>
+                        <th>Type</th>
+                        <th>Ref. ID</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <!-- Patient details -->
+                        <td>Emily Davis</td>
+                        <td>06/12/24</td>
+                        <td>24</td>
+                        <td>Female</td>
+                        <td>TYPE</td>
+                        <td>xxxxxx01</td>
+                        <!-- Status of the case -->
+                        <td class="status ongoing">Ongoing</td>
+                    </tr>
+                    <tr>
+                        <td>Jennifer Wilson</td>
+                        <td>06/12/24</td>
+                        <td>26</td>
+                        <td>Female</td>
+                        <td>TYPE</td>
+                        <td>xxxxxx33</td>
+                        <td class="status due">Due</td>
+                    </tr>
+                    <tr>
+                        <td>Linda Martinez</td>
+                        <td>06/15/24</td>
+                        <td>28</td>
+                        <td>Female</td>
+                        <td>TYPE</td>
+                        <td>xxxxxx34</td>
+                        <td class="status postponed">Postponed</td>
+                    </tr>
+                    <tr>
+                        <td>James Garcia</td>
+                        <td>06/15/24</td>
+                        <td>31</td>
+                        <td>Male</td>
+                        <td>TYPE</td>
+                        <td>xxxxxx04</td>
+                        <td class="status completed">Completed</td>
+                    </tr>
+                    <tr>
+                        <td>Richard Lopez</td>
+                        <td>06/18/24</td>
+                        <td>31</td>
+                        <td>Male</td>
+                        <td>TYPE</td>
+                        <td>xxxxxx37</td>
+                        <td class="status ongoing">Ongoing</td>
+                    </tr>
+                    <tr>
+                        <td>Ayesha</td>
+                        <td>06/18/24</td>
+                        <td>30</td>
+                        <td>Female</td>
+                        <td>TYPE</td>
+                        <td>xxxxxx65</td>
+                        <td class="status completed">Completed</td>
+                    </tr>
+                    <tr>
+                        <td>Charles Lewis</td>
+                        <td>06/21/24</td>
+                        <td>42</td>
+                        <td>Male</td>
+                        <td>TYPE</td>
+                        <td>xxxxxx48</td>
+                        <td class="status postponed">Postponed</td>
+                    </tr>
+                    <tr>
+                        <td>Steven Baker</td>
+                        <td>06/21/24</td>
+                        <td>44</td>
+                        <td>Male</td>
+                        <td>TYPE</td>
+                        <td>xxxxxx57</td>
+                        <td class="status ongoing">Ongoing</td>
+                    </tr>
+                    <tr>
+                        <td>Steve Rogers</td>
+                        <td>06/22/24</td>
+                        <td>35</td>
+                        <td>Male</td>
+                        <td>TYPE</td>
+                        <td>xxxxxx69</td>
+                        <td class="status ongoing">Completed</td>
+                    </tr>
+                    <tr>
+                        <td>Barry Allen</td>
+                        <td>06/25/24</td>
+                        <td>25</td>
+                        <td>Male</td>
+                        <td>TYPE</td>
+                        <td>xxxxxx02</td>
+                        <td class="status due">Due</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

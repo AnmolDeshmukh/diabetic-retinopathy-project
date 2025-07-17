@@ -1,0 +1,159 @@
+/* static/css/profile.css */
+
+/* General body styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #fafafa, #e1f2fa); /* Light gradient background */
+    color: black;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header styling */
+.header {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2); /* Semi-transparent background */
+    padding: 10px 20px;
+    box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+.header .logo img {
+    height: 50px; /* Logo height */
+}
+
+/* Main container styling */
+.container {
+    width: 100%;
+    max-width: 1700px; /* Max width for large screens */
+    margin: 20px auto;
+    background-color: rgba(0, 0, 0, 0.1); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+/* Profile header section styling */
+.profile-header {
+    display: flex;
+    justify-content: space-between; /* Space between profile info and stats */
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Profile info section styling */
+.profile-info {
+    display: flex;
+    align-items: center;
+}
+
+/* Profile picture styling */
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Make it a circle */
+    margin-right: 20px;
+}
+
+/* Profile details styling */
+.profile-details h2 {
+    margin: 0;
+    font-size: 24px; /* Larger font size for name */
+}
+
+.profile-details p {
+    margin: 5px 0 0;
+    font-size: 18px; /* Smaller font for subtitle */
+    color: #000000;
+}
+
+/* Stats section styling */
+.stats {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Space between stat boxes */
+}
+
+/* Individual stat box styling */
+.stat-box {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 10px; /* Rounded corners */
+    color: #000000; /* Black text */
+}
+
+/* Upload button styling */
+.upload-button {
+    background-color: #00b3ff; /* Blue background */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px; /* Slightly rounded corners */
+}
+
+.upload-button:hover {
+    background-color: #008cba; /* Darker blue on hover */
+}
+
+/* Patients section styling */
+.patients-section {
+    margin-top: 20px;
+}
+
+.patients-section h3 {
+    margin-bottom: 10px;
+}
+
+.patients-section .date {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #dddddd; /* Light grey text */
+}
+
+/* Table styling */
+table {
+    height: 700px; /* Fixed table height */
+    width: 100%;
+    border-collapse: collapse; /* Remove gaps between table cells */
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd; /* Light grey border between rows */
+}
+
+th {
+    background-color: rgba(0, 0, 0, 0.2); /* Darker background for headers */
+}
+
+/* Status label styling */
+.status {
+    padding: 5px 10px;
+    border-radius: 5px; /* Rounded corners */
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Specific status colors */
+.status.ongoing {
+    background-color: #00b3ff; /* Blue for ongoing status */
+}
+
+.status.due {
+    background-color: #ff3333; /* Red for due status */
+}
+
+.status.postponed {
+    background-color: #00b3ff; /* Blue for postponed status */
+}
+
+.status.completed {
+    background-color: #66cc66; /* Green for completed status */
+}

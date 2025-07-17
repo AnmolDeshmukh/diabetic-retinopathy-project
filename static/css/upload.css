@@ -1,0 +1,104 @@
+body {
+    /* Remove default margin, set font and flexbox for layout */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    background: linear-gradient(135deg, #fafafa, #e1f2fa); /* Gradient background */
+}
+
+.header {
+    /* Full-width header with flexbox alignment */
+    width: 100%;
+    display: flex;
+    justify-content: start; /* Align content to the start (left) */
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.2); /* Semi-transparent background */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.logo {
+    /* Set width for the logo */
+    width: 150px;
+}
+
+.container {
+    /* Flexbox container for centering content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-grow: 1; /* Allow container to grow and fill remaining space */
+}
+
+.upload-container {
+    /* Styling for the upload container with background blur effect */
+    background: rgba(0, 0, 0, 0.1); /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Blur effect for background */
+    padding: 20px;
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Stronger shadow for depth */
+    text-align: center;
+    width: 500px; /* Fixed width for the container */
+}
+
+.upload-container h1 {
+    /* Style for the heading */
+    color: rgb(0, 0, 0); /* Black text color */
+    margin-bottom: 20px;
+}
+
+.upload-container input[type="file"] {
+    /* Hide the file input element */
+    display: none;
+}
+
+.choose-file-label {
+    /* Style for the file input label as a button */
+    display: inline-block;
+    padding: 10px 20px;
+    background: #d984f0; /* Purple background */
+    color: white;
+    border-radius: 4px;
+    cursor: pointer; /* Pointer cursor on hover */
+    margin-bottom: 20px;
+}
+
+#image-preview {
+    /* Container for image preview with dashed border */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    border: 1px dashed #060606; /* Dashed border for preview area */
+    padding: 10px;
+    width: 100%; /* Full width */
+    height: 200px; /* Fixed height */
+    box-sizing: border-box; /* Include padding in width/height calculation */
+}
+
+#image-preview img {
+    /* Style for the previewed image */
+    max-width: 100%; /* Scale image to fit width */
+    max-height: 100%; /* Scale image to fit height */
+    display: block;
+    margin: auto; /* Center image horizontally and vertically */
+}
+
+.upload-button {
+    /* Style for the upload button */
+    padding: 10px 20px;
+    background: #d984f0; /* Purple background */
+    border: none;
+    color: white;
+    font-size: 16px; /* Larger text */
+    border-radius: 4px;
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.upload-button:hover, .choose-file-label:hover {
+    /* Change background color on hover for buttons */
+    background: #008cba; /* Blue background on hover */
+}
