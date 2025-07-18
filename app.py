@@ -18,11 +18,11 @@ def download_model_if_missing(url, path):
 
 # Download models if not present (Render-safe)
 download_model_if_missing(
-    "https://drive.google.com/uc?export=download&id=13s6TExlZc5TRIIYg3k_v6zEZGLtz_lhh",
+    "https://drive.google.com/file/d/13s6TExlZc5TRIIYg3k_v6zEZGLtz_lhh/view?usp=sharing",
     "final_model.pth"
 )
 download_model_if_missing(
-    "https://drive.google.com/uc?export=download&id=1CaMPYnSaiyxrTTVsYCeVrex6IpAYm_6j",
+    "https://drive.google.com/file/d/1CaMPYnSaiyxrTTVsYCeVrex6IpAYm_6j/view?usp=sharing",
     "macularedema.pth"
 )
 
