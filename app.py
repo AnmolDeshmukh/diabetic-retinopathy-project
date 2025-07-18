@@ -6,6 +6,27 @@ import torch.nn as nn
 from torchvision import models, transforms
 from PIL import Image
 import time
+import urllib.request
+
+
+
+def download_model_if_missing(url, path):
+    if not os.path.exists(path):
+        print(f"Downloading model to {path}...")
+        urllib.request.urlretrieve(url, path)
+        print("Download complete.")
+
+# Download models if not present (Render-safe)
+download_model_if_missing(
+    "https://drive.google.com/uc?export=download&id=13s6TExlZc5TRIIYg3k_v6zEZGLtz_lhh",
+    "final_model.pth"
+)
+download_model_if_missing(
+    "https://drive.google.com/uc?export=download&id=1CaMPYnSaiyxrTTVsYCeVrex6IpAYm_6j",
+    "macularedema.pth"
+)
+
+
 
 app = Flask(__name__)
 
@@ -212,5 +233,5 @@ def analysis():
     mask_exists = os.path.exists(mask_filepath)
     return render_template('analysis.html', filename=filename, prediction_dr=prediction_dr, prediction_me=prediction_me, mask_exists=mask_exists, mask_filename=mask_filename)
 
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
