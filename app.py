@@ -7,24 +7,29 @@ from torchvision import models, transforms
 from PIL import Image
 import time
 import urllib.request
+import gdown
 
 
+# Function to download models if they don't exist
+def download_model(file_id, output_path):
+    if not os.path.exists(output_path):
+        print(f"Downloading model to {output_path}...")
+        try:
+            url = f"https://drive.google.com/uc?id={file_id}"
+            gdown.download(url, output=output_path, quiet=False)
+            print("Download complete.")
+        except Exception as e:
+            print(f"Error downloading model: {e}")
+            raise
 
-def download_model_if_missing(url, path):
-    if not os.path.exists(path):
-        print(f"Downloading model to {path}...")
-        urllib.request.urlretrieve(url, path)
-        print("Download complete.")
+# Google Drive file IDs
+final_model_id = '13s6TExlZc5TRIIYg3k_v6zEZGLtz_lhh'
+macularedema_id = '1CaMPYnSaiyxrTTVsYCeVrex6IpAYm_6j'
 
-# Download models if not present (Render-safe)
-download_model_if_missing(
-    "https://drive.google.com/file/d/13s6TExlZc5TRIIYg3k_v6zEZGLtz_lhh/view?usp=sharing",
-    "final_model.pth"
-)
-download_model_if_missing(
-    "https://drive.google.com/file/d/1CaMPYnSaiyxrTTVsYCeVrex6IpAYm_6j/view?usp=sharing",
-    "macularedema.pth"
-)
+# Download the models
+download_model(final_model_id, 'final_model.pth')
+download_model(macularedema_id, 'macularedema.pth')
+
 
 
 
